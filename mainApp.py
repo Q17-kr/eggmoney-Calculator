@@ -54,8 +54,7 @@ with input_col:
             delete_index = i
     
     if delete_index is not None:
-        data.drop(index=delete_index, inplace=True)
-        data.reset_index(drop=True, inplace=True)
+        data.loc[delete_index] = ["", 0]
         st.session_state.data = data
         st.rerun()
 
@@ -66,6 +65,8 @@ with input_col:
 
     if changed:
         st.session_state.data = data
+
+
 
 with get_code_col:
     st.markdown("사용 코드")
