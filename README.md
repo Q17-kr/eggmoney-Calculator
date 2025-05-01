@@ -10,6 +10,6 @@
 
 ---
 
-> ![This app has gone to sleep due to inactivity. Would you like to wake it back up?](data/error.PNG)
-> 접속 시 위와 같은 화면이 뜨면 버튼을 누르고 기다리시면 이후 정상적으로 이용이 가능합니다.
+> This app has gone to sleep due to inactivity. Would you like to wake it back up?
+> 접속 시 위와 같은 문구가 뜨면 버튼을 누르고 기다리시면 이후 정상적으로 이용이 가능합니다.
 > 
