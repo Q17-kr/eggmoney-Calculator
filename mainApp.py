@@ -14,10 +14,9 @@ uploaded_file = upload_file.file_uploader("코드 데이터 파일 업로드", t
 if uploaded_file is not None:
     st.session_state.data = pd.read_csv(uploaded_file, dtype={"code": str, "account": int})
 
+data = st.session_state.data
 
 download_file.download_button("데이터 저장", data.to_csv().encode("utf-8"), file_name="eggmoneyCodesData.csv", mime="text/csv", type="secondary")
-
-data = st.session_state.data
 
 
 
