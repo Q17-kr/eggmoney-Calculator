@@ -35,7 +35,10 @@ download_col.download_button("데이터 저장", data=csv, file_name="eggmoneyCo
 input_col, get_code_col = st.columns([1, 1])
 
 with input_col:
-    st.markdown("코드 및 잔액 입력")
+    header = st.container()
+    col_code, col_account, _ = header.columns([3, 1, 1])
+    col_code.markdown("코드")
+    col_account.markdown("잔액")
     changed = False
     delete_index = None
 
@@ -57,7 +60,8 @@ with input_col:
             delete_index = i
     
     if delete_index is not None:
-        data.loc[delete_index] = ["", 0]
+        data.drop(index=delete_index, inplace=True)
+        data.reset_index(drop=True, inplace=True)
         st.session_state.data = data
         st.rerun()
 
