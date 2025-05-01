@@ -15,7 +15,7 @@ upload_file, download_file = file.columns([1, 1])
 
 uploaded_file = upload_file.file_uploader("코드 데이터 파일 업로드", type=["csv"])
 if uploaded_file is not None:
-    st.session_state.data = pd.read_csv(uploaded_file, dtype={"code": str, "account": int})
+    st.session_state.data = pd.read_csv(uploaded_file, dtype={"code": str, "account": int}).fillna("")
 
 data = st.session_state.data
 
