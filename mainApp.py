@@ -19,7 +19,7 @@ if uploaded_file is not None:
 
 data = st.session_state.data
 
-download_file.download_button("데이터 저장", data.to_csv().encode("utf-8"), file_name="eggmoneyCodesData.csv", mime="text/csv", type="secondary")
+download_file.download_button("데이터 저장", data.to_csv().encode("utf-8"), file_name="eggmoneyCodesData.csv", mime="text/csv", type="secondary", use_container_width=True)
 
 
 
