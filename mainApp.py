@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-import pyperclip as pc
+# import pyperclip as pc
 
 if "data" not in st.session_state:
     origin_data = pd.DataFrame(columns=["code", "account"], index=list(range(10)))
@@ -69,7 +69,11 @@ with get_code:
 
     if selected_code:
         codeFirst, codeSecond, codeThird, codeFourth = st.columns(4)
-        codeFirst.button(selected_code[:5], on_click=pc.copy, args=(selected_code[:5],), use_container_width=True)
-        codeSecond.button(selected_code[5:10], on_click=pc.copy, args=(selected_code[5:10],), use_container_width=True)
-        codeThird.button(selected_code[10:15], on_click=pc.copy, args=(selected_code[10:15],), use_container_width=True)
-        codeFourth.button(selected_code[15:], on_click=pc.copy, args=(selected_code[15:],), use_container_width=True)
+        # codeFirst.button(selected_code[:5], on_click=pc.copy, args=(selected_code[:5],), use_container_width=True)
+        # codeSecond.button(selected_code[5:10], on_click=pc.copy, args=(selected_code[5:10],), use_container_width=True)
+        # codeThird.button(selected_code[10:15], on_click=pc.copy, args=(selected_code[10:15],), use_container_width=True)
+        # codeFourth.button(selected_code[15:], on_click=pc.copy, args=(selected_code[15:],), use_container_width=True)
+        codeFirst.code(selected_code[:5], language="text")
+        codeSecond.code(selected_code[5:10], language="text")
+        codeThird.code(selected_code[10:15], language="text")
+        codeFourth.code(selected_code[15:], language="text")
