@@ -3,7 +3,10 @@ import pandas as pd
 import clipboard as cb
 
 if "data" not in st.session_state:
-    st.session_state.data = pd.DataFrame(columns=["code", "account"], index=list(range(10)))
+    origin_data = pd.DataFrame(columns=["code", "account"], index=list(range(10)))
+    origin_data["code"] = [""] * 10
+    origin_data["account"] = [0] * 10
+    st.session_state.data
 
 
 
