@@ -8,7 +8,7 @@ def load_csv(uploaded_file):
 
 
 if "data" not in st.session_state:
-    df = pd.DataFrame(columns=["code", "account"], index=range(10))
+    df = pd.DataFrame(columns=["code", "account"], index=range(5))
     df["code"] = ""
     df["account"] = 0
     st.session_state.data = df
