@@ -6,7 +6,7 @@ if "data" not in st.session_state:
     origin_data = pd.DataFrame(columns=["code", "account"], index=list(range(10)))
     origin_data["code"] = [""] * 10
     origin_data["account"] = [0] * 10
-    st.session_state.data
+    st.session_state.data = origin_data
 
 
 
