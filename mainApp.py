@@ -46,11 +46,13 @@ for i in range(data.index.max() + 1):
             data.loc[i, "code"] = new_code
             data.loc[i, "account"] = new_account
             st.session_state.data = data
+            st.rerun()
 
         if col_delete.button("삭제", key=f"del_{i}"):
             data.loc[i, "code"] = ""
             data.loc[i, "account"] = 0
             st.session_state.data = data
+            st.rerun()
 
 
 if input_code.button("", icon=":material/add:", use_container_width=True):
