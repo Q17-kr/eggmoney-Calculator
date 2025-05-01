@@ -21,6 +21,7 @@ upload_col, download_col = file_container.columns([1, 1])
 uploaded_file = upload_col.file_uploader("코드 데이터 파일 업로드", type=["csv"])
 if uploaded_file:
     st.session_state.data = load_csv(uploaded_file)
+    uploaded_file.close()
 
 data = st.session_state.data
 
